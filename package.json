@@ -5,14 +5,17 @@
   "author": "Yuttasak Pannawat <yuttasakcom@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "env-cmd ./.env.dev nodemon src/index.js --exec babel-node"
+    "dev": "env-cmd ./.env.dev nodemon src/index.js --exec babel-node",
+    "get-schema": "graphql get-schema -p prisma --dotenv .env.dev",
+    "prisma-deploy": "prisma deploy --env-file .env.dev"
   },
   "dependencies": {
     "apollo-server-express": "^2.4.8",
     "env-cmd": "^8.0.2",
     "express": "^4.16.4",
     "graphql": "^14.1.1",
-    "graphql-import": "^0.7.1"
+    "graphql-import": "^0.7.1",
+    "prisma-binding": "^2.3.9"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

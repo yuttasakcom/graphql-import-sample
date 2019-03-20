@@ -1,3 +1,4 @@
+import User from "./user/resolvers";
 import Post from "./post/resolvers";
 
-export default [Post];
+export default [User, Post];

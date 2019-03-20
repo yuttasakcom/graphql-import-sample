@@ -1,0 +1,19 @@
+# import Post from '../post/post.graphql'
+
+type Query {
+  users: [User!]!
+}
+
+type Mutation {
+  createUser(data: CreateUserInput!): User!
+}
+
+type User {
+  id: ID!
+  name: String!
+  posts: [Post]
+}
+
+input CreateUserInput {
+  name: String!
+}

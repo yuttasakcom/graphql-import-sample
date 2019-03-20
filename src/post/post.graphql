@@ -1,3 +1,5 @@
+# import User from '../user/user.graphql'
+
 type Query {
   posts: [Post!]!
 }
@@ -11,11 +13,14 @@ type Subscription {
 }
 
 type Post {
+  id: ID!
   title: String!
   body: String!
+  author: User!
 }
 
 input CreatePostInput {
   title: String!
   body: String!
+  author: ID!
 }

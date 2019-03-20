@@ -4,7 +4,7 @@ import { ApolloServer, PubSub } from "apollo-server-express";
 import { importSchema } from "graphql-import";
 
 import resolvers from "./resolvers";
-import db from "./db";
+import prisma from "./prisma";
 
 const app = express();
 const typeDefs = importSchema("src/schema.graphql");
@@ -14,7 +14,7 @@ const pubsub = new PubSub();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: { db, pubsub },
+  context: { prisma, pubsub },
 });
 
 server.applyMiddleware({ app });

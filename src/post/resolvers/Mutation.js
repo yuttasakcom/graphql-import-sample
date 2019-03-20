@@ -1,13 +1,14 @@
 export default {
   Mutation: {
-    createPost: async (parent, { data }, { db, pubsub }) => {
-      const post = {
-        title: data.title,
-        body: data.body,
+    createPost: async (parent, { data }, { prisma, pubsub }, info) => {
+      data.author = {
+        connect: {
+          id: data.author,
+        },
       };
-      await db.posts.push(post);
+      const post = await prisma.mutation.createPost({ data }, info);
       pubsub.publish("postCreated", post);
-      return data;
+      return post;
     },
   },
 };
