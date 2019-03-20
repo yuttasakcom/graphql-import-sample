@@ -1,5 +1,5 @@
 export default {
   Query: {
-    posts: () => [{ id: 1, title: "Post title", body: "Post body" }],
+    posts: async (parent, args, { db }) => await db.posts,
   },
 };
