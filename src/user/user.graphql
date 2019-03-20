@@ -1,3 +1,4 @@
+# import PostWhereInput, PostOrderByInput from '../generated/prisma.graphql'
 # import Post from '../post/post.graphql'
 
 type Query {
@@ -11,7 +12,17 @@ type Mutation {
 type User {
   id: ID!
   name: String!
-  posts: [Post!]!
+  createdAt: String!
+  updatedAt: String!
+  posts(
+    where: PostWhereInput
+    orderBy: PostOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [Post!]
 }
 
 input CreateUserInput {

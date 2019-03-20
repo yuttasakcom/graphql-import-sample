@@ -2,6 +2,8 @@ type User {
   id: ID! @id
   name: String!
   posts: [Post!]! @relation(link: INLINE, name: "PostToUser", onDelete: CASCADE)
+  createdAt: DateTime!
+  updatedAt: DateTime!
 }
 
 type Post {
@@ -9,4 +11,6 @@ type Post {
   title: String!
   body: String!
   author: User @relation(name: "PostToUser", onDelete: SET_NULL)
+  createdAt: DateTime!
+  updatedAt: DateTime!
 }

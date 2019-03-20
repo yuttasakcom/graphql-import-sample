@@ -1,7 +1,7 @@
 # import User from '../user/user.graphql'
 
 type Query {
-  posts(first: Int): [Post!]!
+  posts: [Post!]!
 }
 
 type Mutation {
@@ -17,6 +17,8 @@ type Post {
   title: String!
   body: String!
   author: User
+  createdAt: String!
+  updatedAt: String!
 }
 
 input CreatePostInput {
