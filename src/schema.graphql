@@ -1,5 +1,1 @@
-# import * from "./post/post.graphql"
-
-type Query {
-  posts: [Post!]!
-}
+# import Query.* from "./post/post.graphql"
