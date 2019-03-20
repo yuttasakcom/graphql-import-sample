@@ -1,0 +1,6 @@
+# import * from "./post.graphql"
+
+type Query {
+  hello: String!
+  posts: [Post!]!
+}
