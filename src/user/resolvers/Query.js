@@ -1,5 +1,6 @@
 export default {
   Query: {
-    users: async (parent, args, { prisma }) => await prisma.query.users(),
+    users: async (parent, args, { prisma }, info) =>
+      await prisma.query.users(null, info),
   },
 };

@@ -1,12 +1,13 @@
 type User {
   id: ID! @id
   name: String!
-  posts: [Post] @relation(link: INLINE, name: "PostToUser", onDelete: CASCADE)
+  posts: [Post!]! @relation(link: INLINE, name: "PostToUser", onDelete: CASCADE)
 }
 
 type Post {
   id: ID! @id
   title: String!
   body: String!
-  author: User! @relation(link: INLINE, name: "AuthToUser", onDelete: SET_NULL)
+  author: User!
+    @relation(link: INLINE, name: "AuthorToUser", onDelete: SET_NULL)
 }

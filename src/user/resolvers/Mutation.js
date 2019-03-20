@@ -1,6 +1,6 @@
 export default {
   Mutation: {
-    createUser: async (parent, { data }, { prisma }) =>
-      await prisma.mutation.createUser({ data }),
+    createUser: async (parent, { data }, { prisma }, info) =>
+      await prisma.mutation.createUser({ data }, info),
   },
 };
